@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+sample:
+  # HTTP inbound toggle
+  inbound.http-enabled: true
+  # gRPC inbound toggle
+  inbound.grpc-enabled: true
+  # outbound: opensearch | clickhouse
+  outbound: clickhouse

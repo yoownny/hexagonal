@@ -1,0 +1,15 @@
+package com.ahnlab.edr.sample.in.http.dto.query;
+
+import lombok.Data;
+
+/**
+ * Response DTO for reading a user via HTTP.
+ * Used in query operations (GET).
+ */
+@Data
+public class UserResponse {
+
+	private String id;
+
+	private String name;
+}
