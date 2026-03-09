@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-bootstrap/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-in-grpc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-in-http/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-out-clickhouse/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/sample-out-opensearch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-hexagonal/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
