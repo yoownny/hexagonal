@@ -1,21 +1,24 @@
 package com.ahnlab.edr.sample.in.http.mapper.command;
 
+import com.ahnlab.edr.sample.config.HttpInboundEnabled;
 import com.ahnlab.edr.sample.core.domain.vo.EventVO;
 import com.ahnlab.edr.sample.in.http.dto.command.EventRequest;
-import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
 
 /**
- * MapStruct mapper for converting EventRequest to EventVO.
- * Used in command operations (POST/PUT).
- *
- * <pre>
- * \@Mapping(source = "eventId", target = "id")
- * \@Mapping(source = "eventMessage", target = "message")
- * EventVO toVO(EventRequest request);
- * </pre>
+ * EventRequest → EventVO 변환 Mapper.
  */
-@Mapper(componentModel = "spring")
-public interface EventCommandMapper {
+@Component
+@HttpInboundEnabled
+public class EventCommandMapper {
 
-	EventVO toVO(EventRequest request);
+    /**
+     * HTTP 요청 DTO를 이벤트 VO로 변환한다.
+     *
+     * @param request HTTP 요청 DTO
+     * @return 이벤트 VO
+     */
+    public EventVO toVO(EventRequest request) {
+        return new EventVO(request.getId(), request.getMessage());
+    }
 }

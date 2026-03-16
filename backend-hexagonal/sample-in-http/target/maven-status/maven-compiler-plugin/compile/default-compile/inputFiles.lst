@@ -1,0 +1,6 @@
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-in-http/src/main/java/com/ahnlab/edr/sample/in/http/dto/command/EventRequest.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-in-http/src/main/java/com/ahnlab/edr/sample/in/http/dto/query/EventResponse.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-in-http/src/main/java/com/ahnlab/edr/sample/in/http/mapper/command/EventCommandMapper.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-in-http/src/main/java/com/ahnlab/edr/sample/in/http/mapper/query/EventQueryMapper.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-in-http/src/main/java/com/ahnlab/edr/sample/in/http/web/command/EventCommandController.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-in-http/src/main/java/com/ahnlab/edr/sample/in/http/web/query/EventQueryController.java

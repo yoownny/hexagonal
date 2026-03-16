@@ -1,0 +1,4 @@
+com/ahnlab/edr/sample/config/OpenSearchOutboundEnabled.class
+com/ahnlab/edr/sample/config/HttpInboundEnabled.class
+com/ahnlab/edr/sample/config/ClickHouseOutboundEnabled.class
+com/ahnlab/edr/sample/config/GrpcInboundEnabled.class

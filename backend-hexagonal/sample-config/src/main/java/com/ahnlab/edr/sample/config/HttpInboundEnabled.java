@@ -9,13 +9,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Meta-annotation that enables a component when HTTP inbound is turned on.
- * Equivalent to:
- * {@code @ConditionalOnProperty(name = "sample.inbound.http-enabled", havingValue = "true", matchIfMissing = true)}
+ * HTTP Inbound Adapter 활성화 조건.
+ * application.yml: sample.inbound.http-enabled: true
  */
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ConditionalOnProperty(name = "sample.inbound.http-enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(
+    name = "sample.inbound.http-enabled",
+    havingValue = "true",
+    matchIfMissing = false
+)
 public @interface HttpInboundEnabled {
 }

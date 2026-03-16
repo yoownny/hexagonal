@@ -1,0 +1,11 @@
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/command/port/in/EventCommandUseCase.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/command/port/out/EventCommandStorePort.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/command/service/EventCommandService.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/exception/ApplicationException.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/exception/ErrorCode.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/exception/event/EventErrorCode.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/exception/event/EventException.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/query/port/in/EventQueryUseCase.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/query/port/out/EventQueryStorePort.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/application/query/service/EventQueryService.java
+/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/domain/vo/EventVO.java

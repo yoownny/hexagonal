@@ -5,6 +5,17 @@ sample:
   # HTTP inbound toggle
   inbound.http-enabled: true
   # gRPC inbound toggle
-  inbound.grpc-enabled: true
+  inbound.grpc-enabled: false
   # outbound: opensearch | clickhouse
-  outbound: clickhouse
+  outbound: opensearch
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+    display-request-duration: true
+  api-docs:
+    path: /v3/api-docs
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json

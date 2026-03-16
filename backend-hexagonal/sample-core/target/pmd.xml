@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.44.0" timestamp="2026-03-16T14:10:26.593">
+<error filename="/mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/domain/vo/EventVO.java" msg="PMDException: Error while parsing /mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/domain/vo/EventVO.java">
+<![CDATA[net.sourceforge.pmd.PMDException: Error while parsing /mnt/c/Users/ahnlab/Desktop/hexaTest/backend-hexagonal/sample-core/src/main/java/com/ahnlab/edr/sample/core/domain/vo/EventVO.java
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCodeWithoutCache(SourceCodeProcessor.java:124)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCode(SourceCodeProcessor.java:100)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCode(SourceCodeProcessor.java:62)
+	at net.sourceforge.pmd.processor.PmdRunnable.call(PmdRunnable.java:85)
+	at net.sourceforge.pmd.processor.PmdRunnable.call(PmdRunnable.java:29)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: net.sourceforge.pmd.lang.java.ast.ParseException: Line 10, Column 8: Records are only supported with JDK >= 16
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.throwParseException(JavaParser.java:30)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.checkForRecordType(JavaParser.java:251)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.RecordDeclaration(JavaParser.java:1324)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.TypeDeclaration(JavaParser.java:821)
+	at net.sourceforge.pmd.lang.java.ast.JavaParser.CompilationUnit(JavaParser.java:527)
+	at net.sourceforge.pmd.lang.java.AbstractJavaParser.parse(AbstractJavaParser.java:62)
+	at net.sourceforge.pmd.lang.AbstractParser.doParse(AbstractParser.java:44)
+	at net.sourceforge.pmd.SourceCodeProcessor.parse(SourceCodeProcessor.java:136)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSource(SourceCodeProcessor.java:200)
+	at net.sourceforge.pmd.SourceCodeProcessor.processSourceCodeWithoutCache(SourceCodeProcessor.java:118)
+	... 10 more
+]]>
+</error>
+</pmd>

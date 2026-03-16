@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree backend-hexagonal -I \"target|.idea|*.iml\" -L 4)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

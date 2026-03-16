@@ -1,33 +1,35 @@
 package com.ahnlab.edr.sample.in.grpc.command;
 
+import com.ahnlab.edr.sample.config.GrpcInboundEnabled;
 import com.ahnlab.edr.sample.core.application.command.port.in.EventCommandUseCase;
 import com.ahnlab.edr.sample.core.domain.vo.EventVO;
-import com.ahnlab.edr.sample.in.grpc.dto.GrpcEventRequest;
-import com.ahnlab.edr.sample.in.grpc.mapper.GrpcEventMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import com.ahnlab.edr.sample.in.grpc.mapper.command.GrpcEventCommandMapper;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 /**
- * gRPC command-side facade for event use cases.
- * Handles write operations only (save).
+ * gRPC 이벤트 Command Facade.
+ * gRPC Service 구현체가 위임하는 비즈니스 호출 클래스.
  */
-@Service
+@Component
+@GrpcInboundEnabled
+@Slf4j
+@RequiredArgsConstructor
 public class GrpcEventCommandFacade {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(GrpcEventCommandFacade.class);
+    private final EventCommandUseCase eventCommandUseCase;
+    private final GrpcEventCommandMapper mapper;
 
-	private final EventCommandUseCase eventCommandUseCase;
-	private final GrpcEventMapper grpcEventMapper;
-
-	public GrpcEventCommandFacade(EventCommandUseCase eventCommandUseCase, GrpcEventMapper grpcEventMapper) {
-		this.eventCommandUseCase = eventCommandUseCase;
-		this.grpcEventMapper = grpcEventMapper;
-	}
-
-	public void save(GrpcEventRequest request) {
-		LOGGER.info("gRPC command save called. id={}, message={}", request.getId(), request.getMessage());
-		EventVO eventVO = grpcEventMapper.toVO(request);
-		eventCommandUseCase.saveEvent(eventVO);
-	}
+    /**
+     * gRPC 요청 맵으로부터 이벤트를 저장한다.
+     *
+     * @param id      이벤트 식별자
+     * @param message 이벤트 메시지
+     */
+    public void save(String id, String message) {
+        EventVO vo = mapper.toVO(id, message);
+        log.debug("gRPC save event: {}", vo.id());
+        eventCommandUseCase.saveEvent(vo);
+    }
 }

@@ -1,29 +1,29 @@
 package com.ahnlab.edr.sample.core.application.exception;
 
 /**
- * Common interface for all error codes in the application.
- * Each domain should define its own error code enum implementing this interface.
+ * 모든 도메인 에러 코드가 구현해야 하는 인터페이스.
+ * 각 도메인별 enum으로 구현한다.
  */
 public interface ErrorCode {
-    
+
     /**
-     * Gets the unique error code (e.g., "EVT-001", "USR-001").
+     * 에러 식별 코드 (예: EVT-101)
      *
-     * @return the error code
+     * @return 에러 코드 문자열
      */
     String getCode();
-    
+
     /**
-     * Gets the error message template.
+     * 에러 메시지 템플릿 (%s 포맷 지원)
      *
-     * @return the error message
+     * @return 메시지 템플릿
      */
     String getMessage();
-    
+
     /**
-     * Gets the HTTP status code associated with this error.
+     * HTTP 상태 코드
      *
-     * @return the HTTP status code (e.g., 404, 500)
+     * @return HTTP 상태 코드
      */
     int getHttpStatus();
 }

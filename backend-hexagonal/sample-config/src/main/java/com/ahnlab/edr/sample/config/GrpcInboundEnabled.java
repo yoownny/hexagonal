@@ -9,13 +9,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Meta-annotation that enables a component when gRPC inbound is turned on.
- * Equivalent to:
- * {@code @ConditionalOnProperty(name = "sample.inbound.grpc-enabled", havingValue = "true", matchIfMissing = false)}
+ * gRPC Inbound Adapter 활성화 조건.
+ * application.yml: sample.inbound.grpc-enabled: true
  */
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ConditionalOnProperty(name = "sample.inbound.grpc-enabled", havingValue = "true", matchIfMissing = false)
+@ConditionalOnProperty(
+    name = "sample.inbound.grpc-enabled",
+    havingValue = "true",
+    matchIfMissing = false
+)
 public @interface GrpcInboundEnabled {
 }

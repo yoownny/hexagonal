@@ -31,13 +31,13 @@
   </properties>
 
   <modules>
+    <module>sample-config</module>
     <module>sample-core</module>
     <module>sample-in-http</module>
-    <module>sample-out-opensearch</module>
-    <module>sample-bootstrap</module>
     <module>sample-in-grpc</module>
+    <module>sample-out-opensearch</module>
     <module>sample-out-clickhouse</module>
-    <module>sample-config</module>
+    <module>sample-bootstrap</module>
   </modules>
 
   <parent>

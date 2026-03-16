@@ -1,28 +1,34 @@
 package com.ahnlab.edr.sample.in.grpc.query;
 
+import com.ahnlab.edr.sample.config.GrpcInboundEnabled;
 import com.ahnlab.edr.sample.core.application.query.port.in.EventQueryUseCase;
 import com.ahnlab.edr.sample.core.domain.vo.EventVO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 /**
- * gRPC query-side facade for event use cases.
- * Handles read operations only (get).
+ * gRPC 이벤트 Query Facade.
+ * gRPC Service 구현체가 위임하는 비즈니스 호출 클래스.
  */
-@Service
+@Component
+@GrpcInboundEnabled
+@Slf4j
+@RequiredArgsConstructor
 public class GrpcEventQueryFacade {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(GrpcEventQueryFacade.class);
+    private final EventQueryUseCase eventQueryUseCase;
 
-	private final EventQueryUseCase eventQueryUseCase;
-
-	public GrpcEventQueryFacade(EventQueryUseCase eventQueryUseCase) {
-		this.eventQueryUseCase = eventQueryUseCase;
-	}
-
-	public EventVO get(String id) {
-		LOGGER.info("gRPC query get called. id={}", id);
-		return eventQueryUseCase.getEvent(id).orElse(null);
-	}
+    /**
+     * ID로 이벤트를 조회한다.
+     *
+     * @param id 이벤트 식별자
+     * @return 이벤트 VO (없으면 empty)
+     */
+    public Optional<EventVO> getEvent(String id) {
+        log.debug("gRPC get event: {}", id);
+        return eventQueryUseCase.getEvent(id);
+    }
 }

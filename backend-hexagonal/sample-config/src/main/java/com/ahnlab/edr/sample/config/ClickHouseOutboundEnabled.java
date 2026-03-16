@@ -9,13 +9,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Meta-annotation for enabling an outbound adapter when ClickHouse is selected.
- * Equivalent to:
- * {@code @ConditionalOnProperty(name = "sample.outbound", havingValue = "clickhouse")}
+ * ClickHouse Outbound Adapter 활성화 조건.
+ * application.yml: sample.outbound: clickhouse
  */
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ConditionalOnProperty(name = "sample.outbound", havingValue = "clickhouse")
+@ConditionalOnProperty(
+    name = "sample.outbound",
+    havingValue = "clickhouse"
+)
 public @interface ClickHouseOutboundEnabled {
 }

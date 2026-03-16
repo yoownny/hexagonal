@@ -9,13 +9,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Meta-annotation for enabling an outbound adapter when OpenSearch is selected.
- * Equivalent to:
- * {@code @ConditionalOnProperty(name = "sample.outbound", havingValue = "opensearch")}
+ * OpenSearch Outbound Adapter 활성화 조건.
+ * application.yml: sample.outbound: opensearch
  */
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@ConditionalOnProperty(name = "sample.outbound", havingValue = "opensearch")
+@ConditionalOnProperty(
+    name = "sample.outbound",
+    havingValue = "opensearch"
+)
 public @interface OpenSearchOutboundEnabled {
 }

@@ -2,28 +2,35 @@ package com.ahnlab.edr.sample.out.opensearch.query;
 
 import com.ahnlab.edr.sample.config.OpenSearchOutboundEnabled;
 import com.ahnlab.edr.sample.core.application.query.port.out.EventQueryStorePort;
-import com.ahnlab.edr.sample.core.domain.entity.EventEntity;
+import com.ahnlab.edr.sample.core.domain.vo.EventVO;
+import com.ahnlab.edr.sample.out.opensearch.mapper.EventEntityMapper;
 import com.ahnlab.edr.sample.out.opensearch.store.OpenSearchEventStore;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 /**
- * Query-side adapter that retrieves events from the shared OpenSearch event store.
- * Implements only {@link EventQueryStorePort} (read responsibility).
+ * OpenSearch Event Query Adapter.
+ * OpenSearch에서 Entity를 조회 후 VO로 변환하여 반환한다.
  */
 @Component
 @OpenSearchOutboundEnabled
+@Slf4j
 @RequiredArgsConstructor
 public class OpenSearchEventQueryAdapter implements EventQueryStorePort {
 
-	private final OpenSearchEventStore eventStore;
+    private final OpenSearchEventStore store;
+    private final EventEntityMapper mapper;
 
-	@Override
-	public Optional<EventEntity> findById(String id) {
-		System.out.println("[OS-Query] OpenSearchEventQueryAdapter.findById - id=" + id);
-		Optional<EventEntity> result = eventStore.get(id);
-		System.out.println("[OS-Query] OpenSearchEventQueryAdapter.findById - found? " + result.isPresent());
-		return result;
-	}
+    @Override
+    public Optional<EventVO> findById(String id) {
+        try {
+            return store.get(id).map(mapper::toVO);
+        } catch (RuntimeException e) {
+            log.error("Failed to query event from OpenSearch: {}", id, e);
+            throw new RuntimeException("Failed to query event: " + id, e);
+        }
+    }
 }

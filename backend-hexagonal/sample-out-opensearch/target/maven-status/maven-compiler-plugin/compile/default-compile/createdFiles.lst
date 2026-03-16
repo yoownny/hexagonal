@@ -1,0 +1,5 @@
+com/ahnlab/edr/sample/out/opensearch/mapper/EventEntityMapper.class
+com/ahnlab/edr/sample/out/opensearch/store/EventEntity.class
+com/ahnlab/edr/sample/out/opensearch/store/OpenSearchEventStore.class
+com/ahnlab/edr/sample/out/opensearch/command/OpenSearchEventCommandAdapter.class
+com/ahnlab/edr/sample/out/opensearch/query/OpenSearchEventQueryAdapter.class
